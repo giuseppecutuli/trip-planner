@@ -1,5 +1,6 @@
 import { NestFactory } from '@nestjs/core'
 import { ValidationPipe, Logger } from '@nestjs/common'
+import { useContainer } from 'class-validator'
 import { ConfigService } from '@nestjs/config'
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger'
 
@@ -20,6 +21,7 @@ async function bootstrap() {
       transform: true,
     }),
   )
+  useContainer(app.select(AppModule), { fallbackOnErrors: true })
 
   // Swagger Api
   if (swaggerConfig.enabled) {

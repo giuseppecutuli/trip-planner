@@ -4,6 +4,7 @@ import { MongooseModule } from '@nestjs/mongoose'
 import config from './common/config'
 import { AirportsModule, TripsModule } from './core'
 import { MongoConfig } from './common/config/config.interface'
+import { MongoExistValidator } from './common/validators/exist-on-mongo.validator'
 
 @Module({
   imports: [
@@ -22,6 +23,6 @@ import { MongoConfig } from './common/config/config.interface'
     TripsModule,
   ],
   controllers: [],
-  providers: [],
+  providers: [MongoExistValidator],
 })
 export class AppModule {}
