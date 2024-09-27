@@ -1,5 +1,5 @@
+import { ExternalTrip } from '../models/trip.model'
 import { SortBy } from '../types/sortBy'
-import { Trip } from '../types/trip'
 
 export type SearchTripsParams = {
   origin: string
@@ -8,6 +8,6 @@ export type SearchTripsParams = {
 }
 
 export abstract class TripProvider {
-  abstract searchTrips(params: SearchTripsParams): Promise<Trip[]>
-  abstract getTripById(id: string): Promise<Trip>
+  abstract searchTrips(params: SearchTripsParams): Promise<ExternalTrip[]>
+  abstract getTripById(id: string): Promise<ExternalTrip>
 }

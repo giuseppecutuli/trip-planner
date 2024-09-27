@@ -4,6 +4,7 @@ import { PaginateModel } from 'mongoose'
 import { Trip } from './schemas/trip.schema'
 import { TripProviderFactory } from './trip-provider.factory'
 import { SearchTripDto } from './dto/SearchTrip.dto'
+import { ExternalTrip } from './models/trip.model'
 
 @Injectable()
 export class TripsService {
@@ -13,9 +14,14 @@ export class TripsService {
     private tripProviderFactory: TripProviderFactory,
   ) {}
 
-  async search(query: SearchTripDto) {
+  async search(query: SearchTripDto): Promise<ExternalTrip[]> {
     const provider = this.tripProviderFactory.getProvider('bizaway')
 
-    return provider.searchTrips(query)
+    const results = await provider.searchTrips(query)
+
+    return results.map((el) => ({
+      ...el,
+      provider: 'bizaway',
+    }))
   }
 }

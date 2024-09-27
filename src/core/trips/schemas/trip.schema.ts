@@ -2,12 +2,14 @@ import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose'
 import { ApiProperty } from '@nestjs/swagger'
 import { HydratedDocument } from 'mongoose'
 import * as paginate from 'mongoose-paginate-v2'
-import { Trip as TTrip, TripType } from '../types/trip'
+import { TripType } from '../types/tripType'
+import { BaseModel } from 'src/common/models/base.model'
+import { ExternalTrip } from '../models/trip.model'
 
 export type TripDocument = HydratedDocument<Trip>
 
 @Schema({ validateBeforeSave: true, timestamps: true })
-export class Trip implements TTrip {
+export class Trip extends BaseModel implements Omit<ExternalTrip, 'id'> {
   @ApiProperty()
   @Prop()
   origin: string

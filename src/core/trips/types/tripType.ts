@@ -6,12 +6,3 @@ export const tripTypes = {
 } as const
 
 export type TripType = keyof typeof tripTypes
-
-export type Trip = {
-  origin: string
-  destination: string
-  cost: number
-  duration: number
-  type: TripType
-  display_name: string
-}
