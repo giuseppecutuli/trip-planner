@@ -1,36 +1,69 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
-</p>
-
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
-
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+# Trip Planner
 
 ## Description
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+Trip Planner is a simple project designed to help users find the best trip from an origin to a destination.
+
+In addition, users (after registration) can save and manage their trips (view, delete).
+
+The current implementation supports managing multiple providers for searching trips.
+
+Currently, only one provider is implemented, but the system is designed to be easily extendable, allowing for the addition of an unlimited number of providers.
+
+## Libraries Used
+
+- **NestJS**: A framework for building efficient, reliable, and scalable server-side applications.
+- **Mongoose**: MongoDB object modeling designed to work in an asynchronous environment.
+- **Passport**: Middleware for authentication.
+- **Jest**: Testing framework.
+- **Swagger**: API documentation.
+- **JWT**: JSON Web Token for secure authentication.
+- **Docker**: Containerization platform to simplify deployment.
+
+## Requirements
+
+- NodeJS 22.x
+- MongoDB 6.x
 
 ## Installation
 
 ```bash
 $ pnpm install
 ```
+
+:warning: If you don't have `pnpm` installed, you can install it by running:
+
+```bash
+$ npm install -g pnpm
+```
+
+### Mongodb
+
+You can run a MongoDB instance using Docker Compose:
+
+```bash
+$ docker-compose up -d
+```
+
+An instance of MongoDB will be available at `mongodb://localhost:27017/trip-planner`.
+
+
+## Configuration
+
+Create a `.env` copy of the `.env.example` file and fill in the necessary values.
+
+```bash
+$ cp .env.example .env
+```
+
+:warning: Fill `BIZAWAY_*` variables with the correct values for the connection to the BizAway API.
+
+Run the seed script to populate the database with the supported airports:
+
+```bash
+$ pnpm run seed
+```
+
 
 ## Running the app
 
@@ -45,6 +78,10 @@ $ pnpm run start:dev
 $ pnpm run start:prod
 ```
 
+## API Documentation
+
+The API documentation is available at `http://localhost:3000/api`.
+
 ## Test
 
 ```bash
@@ -58,16 +95,4 @@ $ pnpm run test:e2e
 $ pnpm run test:cov
 ```
 
-## Support
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](LICENSE).
