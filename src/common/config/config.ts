@@ -24,11 +24,6 @@ export default (): Config => ({
     version: '1.0',
     path: 'api',
   },
-  security: {
-    expiresIn: '1d',
-    refreshIn: '7d',
-    bcryptSaltOrRound: 10,
-  },
   tripProviders: {
     bizaway: {
       url: getOsEnv('BIZAWAY_TRIP_API_URL'),

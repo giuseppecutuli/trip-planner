@@ -2,7 +2,6 @@ export interface Config {
   nest: NestConfig
   cors: CorsConfig
   swagger: SwaggerConfig
-  security: SecurityConfig
   mongo: MongoConfig
   auth: AuthConfig
   tripProviders: Record<string, TripProviderConfig>
@@ -33,12 +32,6 @@ export interface SwaggerConfig {
   description: string
   version: string
   path: string
-}
-
-export interface SecurityConfig {
-  expiresIn: string
-  refreshIn: string
-  bcryptSaltOrRound: string | number
 }
 
 export interface TripProviderConfig {
