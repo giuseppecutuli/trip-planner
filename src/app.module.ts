@@ -2,11 +2,9 @@ import { Module } from '@nestjs/common'
 import { ConfigModule, ConfigService } from '@nestjs/config'
 import { MongooseModule } from '@nestjs/mongoose'
 import config from './common/config'
-import { AirportsModule, TripsModule } from './core'
+import { AirportsModule, TripsModule, AuthModule, UsersModule } from './core'
 import { MongoConfig } from './common/config/config.interface'
 import { MongoExistValidator } from './common/validators/exist-on-mongo.validator'
-import { UsersModule } from './core/users/users.module'
-import { AuthModule } from './core/auth/auth.module'
 
 @Module({
   imports: [
