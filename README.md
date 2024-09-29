@@ -78,10 +78,6 @@ $ pnpm run start:dev
 $ pnpm run start:prod
 ```
 
-## API Documentation
-
-The API documentation is available at `http://localhost:3000/api`.
-
 ## Test
 
 ```bash
@@ -94,5 +90,21 @@ $ pnpm run test:e2e
 # test coverage
 $ pnpm run test:cov
 ```
+
+## API Documentation
+
+The API documentation is available at `http://localhost:3000/api`.
+
+## Folder Structure
+
+The project is divided into the following folders:
+
+- **common**: Contains shared modules and utilities.
+- **core**: Contains the core modules of the application.
+  - **airports**: Contains the airports module.
+  - **auth**: Contains the authentication module.
+  - **trips**: Contains the trips module.
+  - **users**: Contains the users module.
+- **seeds**: Contains seed data for the database.
 
 
