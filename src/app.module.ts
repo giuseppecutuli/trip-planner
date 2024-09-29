@@ -5,6 +5,8 @@ import config from './common/config'
 import { AirportsModule, TripsModule } from './core'
 import { MongoConfig } from './common/config/config.interface'
 import { MongoExistValidator } from './common/validators/exist-on-mongo.validator'
+import { UsersModule } from './core/users/users.module'
+import { AuthModule } from './core/auth/auth.module'
 
 @Module({
   imports: [
@@ -21,6 +23,8 @@ import { MongoExistValidator } from './common/validators/exist-on-mongo.validato
     }),
     AirportsModule,
     TripsModule,
+    UsersModule,
+    AuthModule,
   ],
   controllers: [],
   providers: [MongoExistValidator],

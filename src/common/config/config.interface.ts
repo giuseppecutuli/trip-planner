@@ -4,7 +4,15 @@ export interface Config {
   swagger: SwaggerConfig
   security: SecurityConfig
   mongo: MongoConfig
+  auth: AuthConfig
   tripProviders: Record<string, TripProviderConfig>
+}
+
+export interface AuthConfig {
+  jwtSecret: string
+  jwtExpiresIn: string
+  jwtRefreshSecret: string
+  jwtRefreshExpiresIn: string
 }
 
 export interface NestConfig {

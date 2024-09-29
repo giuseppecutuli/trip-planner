@@ -11,6 +11,12 @@ export default (): Config => ({
   mongo: {
     uri: getOsEnv('MONGO_URI'),
   },
+  auth: {
+    jwtSecret: getOsEnv('JWT_SECRET'),
+    jwtExpiresIn: getOsEnv('JWT_EXPIRES_IN'),
+    jwtRefreshSecret: getOsEnv('JWT_REFRESH_SECRET'),
+    jwtRefreshExpiresIn: getOsEnv('JWT_REFRESH_EXPIRES_IN'),
+  },
   swagger: {
     enabled: true,
     title: 'Trip Planner API',
