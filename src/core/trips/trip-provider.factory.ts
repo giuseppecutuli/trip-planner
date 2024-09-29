@@ -1,11 +1,12 @@
 import { Injectable } from '@nestjs/common'
 import { BizawayProvider } from './providers/bizaway.provider'
+import { Provider } from './types/provider'
 
 @Injectable()
 export class TripProviderFactory {
   constructor(private bizawayProvider: BizawayProvider) {}
 
-  getProvider(provider: string) {
+  getProvider(provider: Provider) {
     switch (provider) {
       case 'bizaway':
         return this.bizawayProvider

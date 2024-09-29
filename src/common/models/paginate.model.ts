@@ -1,12 +1,17 @@
 import { ApiProperty } from '@nestjs/swagger'
+import { PaginateResult as PaginateResultMongo } from 'mongoose'
 
-export class PaginateModel<T> {
+export class PaginateResult<T> implements PaginateResultMongo<T> {
+  @ApiProperty()
+  totalPages: number
+  @ApiProperty()
+  offset: number
   @ApiProperty()
   totalDocs: number
   @ApiProperty()
   limit: number
   @ApiProperty()
-  page: number
+  page?: number | undefined
   @ApiProperty()
   pagingCounter: number
   @ApiProperty()
@@ -14,9 +19,11 @@ export class PaginateModel<T> {
   @ApiProperty()
   hasNextPage: boolean
   @ApiProperty()
-  prevPage: string | null
+  prevPage?: number | null | undefined
   @ApiProperty()
-  nextPage: string | null
+  nextPage?: number | null | undefined
 
-  data: T[]
+  docs: T[];
+  [customLabel: string]: number | boolean | T[]
+  meta?: any
 }

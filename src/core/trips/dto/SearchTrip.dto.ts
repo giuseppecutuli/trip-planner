@@ -1,6 +1,6 @@
 import { ApiProperty } from '@nestjs/swagger'
 import { IsIn, IsOptional, IsString } from 'class-validator'
-import { sortBy, SortBy } from '../types/sortBy'
+import { SORT_BY, SortBy } from '../types/sortBy'
 import { ExistOnMongo } from 'src/common/validators/exist-on-mongo.validator'
 
 export class SearchTripDto {
@@ -15,7 +15,7 @@ export class SearchTripDto {
   destination: string
 
   @ApiProperty()
-  @IsIn(Object.keys(sortBy))
+  @IsIn(Object.keys(SORT_BY))
   @IsOptional()
   sort_by: SortBy
 }

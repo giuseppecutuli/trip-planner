@@ -1,10 +1,11 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose'
 import { ApiProperty } from '@nestjs/swagger'
-import { HydratedDocument } from 'mongoose'
+import mongoose, { HydratedDocument } from 'mongoose'
 import * as paginate from 'mongoose-paginate-v2'
 import { TripType } from '../types/tripType'
 import { BaseModel } from 'src/common/models/base.model'
 import { ExternalTrip } from '../models/trip.model'
+import { User } from 'src/core/users/schemas/user.schema'
 
 export type TripDocument = HydratedDocument<Trip>
 
@@ -41,6 +42,9 @@ export class Trip extends BaseModel implements Omit<ExternalTrip, 'id'> {
   @ApiProperty()
   @Prop()
   provider: string
+
+  @Prop({ type: mongoose.Schema.Types.ObjectId, ref: 'User' })
+  user: User
 }
 
 const TripSchema = SchemaFactory.createForClass(Trip)

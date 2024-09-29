@@ -9,5 +9,5 @@ export type SearchTripsParams = {
 
 export abstract class TripProvider {
   abstract searchTrips(params: SearchTripsParams): Promise<ExternalTrip[]>
-  abstract getTripById(id: string): Promise<ExternalTrip>
+  abstract getTrip(id: string): Promise<ExternalTrip>
 }

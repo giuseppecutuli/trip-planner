@@ -5,7 +5,7 @@ import { ApiTags } from '@nestjs/swagger'
 import { ApiPaginatedResponse } from 'src/common/utils/swagger'
 import { Airport } from './schemas/airport.schema'
 
-@ApiTags('airports')
+@ApiTags('Airports')
 @Controller('airports')
 export class AirportsController {
   constructor(private airportsService: AirportsService) {}
