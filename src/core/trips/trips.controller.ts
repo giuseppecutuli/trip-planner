@@ -4,12 +4,12 @@ import { TripsService } from './trips.service'
 import { SearchTripDto } from './dto/SearchTrip.dto'
 import { ExternalTrip } from './models/trip.model'
 import { SaveTripDto } from './dto/SaveTrip.dto'
-import { UseAuth } from '../auth/decorators/auth.decorator'
-import { UseUser } from '../auth/decorators/user.decorator'
-import { User } from '../users/schemas/user.schema'
+import { UseAuth } from '@core/auth/decorators/auth.decorator'
+import { UseUser } from '@core/auth/decorators/user.decorator'
+import { User } from '@core/users/schemas/user.schema'
 import { Trip } from './schemas/trip.schema'
-import { PaginateDto } from 'src/common/dto/paginate.dto'
-import { ApiPaginatedResponse } from 'src/common/utils/swagger'
+import { PaginateDto } from '@common/dto/paginate.dto'
+import { ApiPaginatedResponse } from '@common/utils/swagger'
 
 @ApiTags('Trips')
 @Controller('trips')

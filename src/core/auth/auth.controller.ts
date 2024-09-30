@@ -10,7 +10,7 @@ import { RefreshTokenDto } from './dto/refresh-token.dto'
 import { ResetPasswordDto } from './dto/reset-password.dto'
 import { SignInDto } from './dto/sign-in.dto'
 import { SignUpDto } from './dto/sign-up.dto'
-import { User } from '../users/schemas/user.schema'
+import { User } from '@core/users/schemas/user.schema'
 
 @ApiTags('Auth')
 @Controller('auth')

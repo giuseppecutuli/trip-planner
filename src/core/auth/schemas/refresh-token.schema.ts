@@ -1,7 +1,7 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose'
 import { ApiProperty } from '@nestjs/swagger'
 import { HydratedDocument } from 'mongoose'
-import { BaseModel } from 'src/common/models/base.model'
+import { BaseModel } from '@common/models/base.model'
 
 export type RefreshTokenDocument = HydratedDocument<RefreshToken>
 

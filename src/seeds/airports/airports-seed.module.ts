@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common'
 import { MongooseModule } from '@nestjs/mongoose'
 import { AirportsSeedService } from './airports-seed.service'
-import { Airport, AirportSchema } from 'src/core/airports/schemas/airport.schema'
+import { Airport, AirportSchema } from '@core/airports/schemas/airport.schema'
 
 @Module({
   imports: [

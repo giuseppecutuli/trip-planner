@@ -1,5 +1,5 @@
 import { ApiProperty } from '@nestjs/swagger'
-import { TripType } from '../types/tripType'
+import { TripType } from '@core/trips/types/tripType'
 
 export class ExternalTrip {
   @ApiProperty()

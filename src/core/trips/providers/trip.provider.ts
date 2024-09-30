@@ -1,5 +1,5 @@
-import { ExternalTrip } from '../models/trip.model'
-import { SortBy } from '../types/sortBy'
+import { ExternalTrip } from '@core/trips/models/trip.model'
+import { SortBy } from '@core/trips/types/sortBy'
 
 export type SearchTripsParams = {
   origin: string

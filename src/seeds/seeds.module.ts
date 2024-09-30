@@ -1,8 +1,8 @@
 import { Module } from '@nestjs/common'
 import { ConfigModule, ConfigService } from '@nestjs/config'
 import { MongooseModule } from '@nestjs/mongoose'
-import config from 'src/common/config'
-import { MongoConfig } from 'src/common/config/config.interface'
+import config from '@common/config'
+import { MongoConfig } from '@common/config/config.interface'
 
 import { AirportsSeedModule } from './airports/airports-seed.module'
 

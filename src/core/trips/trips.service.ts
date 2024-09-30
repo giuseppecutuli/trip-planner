@@ -6,11 +6,11 @@ import { TripProviderFactory } from './trip-provider.factory'
 import { SearchTripDto } from './dto/SearchTrip.dto'
 import { ExternalTrip } from './models/trip.model'
 import { SaveTripDto } from './dto/SaveTrip.dto'
-import { User } from '../users/schemas/user.schema'
+import { User } from '@core/users/schemas/user.schema'
 import { TripsErrors } from './trips.constants'
 import { PROVIDER } from './types/provider'
-import { PaginateDto } from 'src/common/dto/paginate.dto'
-import { PaginateResult } from 'src/common/models/paginate.model'
+import { PaginateDto } from '@common/dto/paginate.dto'
+import { PaginateResult } from '@common/models/paginate.model'
 
 @Injectable()
 export class TripsService {

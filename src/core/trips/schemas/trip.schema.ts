@@ -2,10 +2,10 @@ import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose'
 import { ApiProperty } from '@nestjs/swagger'
 import mongoose, { HydratedDocument } from 'mongoose'
 import * as paginate from 'mongoose-paginate-v2'
-import { TripType } from '../types/tripType'
-import { BaseModel } from 'src/common/models/base.model'
-import { ExternalTrip } from '../models/trip.model'
-import { User } from 'src/core/users/schemas/user.schema'
+import { TripType } from '@core/trips/types/tripType'
+import { BaseModel } from '@common/models/base.model'
+import { ExternalTrip } from '@core/trips/models/trip.model'
+import { User } from '@core/users/schemas/user.schema'
 
 export type TripDocument = HydratedDocument<Trip>
 

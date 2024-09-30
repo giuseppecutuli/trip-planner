@@ -1,4 +1,4 @@
-import { getOsEnv, getOsEnvNumber } from '../utils/env'
+import { getOsEnv, getOsEnvNumber } from '@common/utils/env'
 import type { Config } from './config.interface'
 
 export default (): Config => ({

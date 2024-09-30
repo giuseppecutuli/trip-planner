@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common'
 import { InjectModel } from '@nestjs/mongoose'
 import { PaginateModel } from 'mongoose'
-import { Airport } from 'src/core/airports/schemas/airport.schema'
+import { Airport } from '@core/airports/schemas/airport.schema'
 import * as airports from './airports.json'
 
 @Injectable()

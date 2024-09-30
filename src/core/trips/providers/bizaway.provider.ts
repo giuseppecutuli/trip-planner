@@ -2,9 +2,9 @@ import { Injectable } from '@nestjs/common'
 import { SearchTripsParams, TripProvider } from './trip.provider'
 import { ConfigService } from '@nestjs/config'
 import axios, { AxiosInstance } from 'axios'
-import { TripProviderConfig } from 'src/common/config/config.interface'
-import { SORT_BY } from '../types/sortBy'
-import { ExternalTrip } from '../models/trip.model'
+import { TripProviderConfig } from '@common/config/config.interface'
+import { SORT_BY } from '@core/trips/types/sortBy'
+import { ExternalTrip } from '@core/trips/models/trip.model'
 
 @Injectable()
 export class BizawayProvider implements TripProvider {

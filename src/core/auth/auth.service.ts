@@ -13,10 +13,10 @@ import { ForgotPasswordDto } from './dto/forgot-password.dto'
 import { ResetPasswordDto } from './dto/reset-password.dto'
 import { JwtPayload } from './types/jwt-payload'
 import { SignUpDto } from './dto/sign-up.dto'
-import { randomString } from 'src/common/utils'
-import { AuthConfig } from 'src/common/config/config.interface'
+import { randomString } from '@common/utils'
+import { AuthConfig } from '@common/config/config.interface'
 import { InjectModel } from '@nestjs/mongoose'
-import { User } from '../users/schemas/user.schema'
+import { User } from '@core/users/schemas/user.schema'
 
 @Injectable()
 export class AuthService {
