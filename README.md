@@ -10,7 +10,7 @@ The current implementation supports managing multiple providers for searching tr
 
 Currently, only one provider is implemented, but the system is designed to be easily extendable, allowing for the addition of an unlimited number of providers.
 
-## Libraries Used
+## Technologies Used
 
 - **NestJS**: A framework for building efficient, reliable, and scalable server-side applications.
 - **Mongoose**: MongoDB object modeling designed to work in an asynchronous environment.
@@ -84,12 +84,13 @@ $ pnpm run start:prod
 # unit tests
 $ pnpm run test
 
-# e2e tests
-$ pnpm run test:e2e
-
 # test coverage
 $ pnpm run test:cov
 ```
+
+### Coverage test
+
+I have tested only the crucial parts of the application, such as the authentication and the trip search because of my limited time.
 
 ## API Documentation
 
@@ -106,5 +107,4 @@ The project is divided into the following folders:
   - **trips**: Contains the trips module.
   - **users**: Contains the users module.
 - **seeds**: Contains seed data for the database.
-
 
