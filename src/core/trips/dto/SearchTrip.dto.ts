@@ -17,5 +17,5 @@ export class SearchTripDto {
   @ApiProperty()
   @IsIn(Object.keys(SORT_BY))
   @IsOptional()
-  sort_by: SortBy
+  sort_by?: SortBy
 }

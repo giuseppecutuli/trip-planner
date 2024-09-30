@@ -3,14 +3,15 @@ import { SearchTripsParams, TripProvider } from './trip.provider'
 import { ConfigService } from '@nestjs/config'
 import axios, { AxiosInstance } from 'axios'
 import { TripProviderConfig } from '@common/config/config.interface'
-import { SORT_BY } from '@core/trips/types/sortBy'
 import { ExternalTrip } from '@core/trips/models/trip.model'
 
 @Injectable()
-export class BizawayProvider implements TripProvider {
+export class BizawayProvider extends TripProvider {
   httpService: AxiosInstance
 
   constructor(private configService: ConfigService) {
+    super()
+
     const config = this.configService.get<TripProviderConfig>('tripProviders.bizaway')
     this.httpService = axios.create({
       baseURL: config.url,
@@ -22,19 +23,7 @@ export class BizawayProvider implements TripProvider {
 
   async searchTrips(params: SearchTripsParams) {
     const response = await this.httpService.get<ExternalTrip[]>('/trips', { params })
-    const data = response.data
-
-    const sortCheapest = (a: ExternalTrip, b: ExternalTrip) => a.cost - b.cost
-    const sortFastest = (a: ExternalTrip, b: ExternalTrip) => a.duration - b.duration
-
-    switch (params.sort_by) {
-      case SORT_BY.cheapest:
-        data.sort(sortCheapest)
-        break
-      case SORT_BY.fastest:
-        data.sort(sortFastest)
-        break
-    }
+    const data = this.sortTrips(response.data, params.sort_by)
 
     return data
   }

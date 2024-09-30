@@ -57,6 +57,10 @@ describe('AuthService', () => {
     jwtService = module.get<JwtService>(JwtService)
   })
 
+  it('should be defined', () => {
+    expect(authService).toBeDefined()
+  })
+
   describe('signIn', () => {
     it('should throw ConflictException if user is not found', async () => {
       jest.spyOn(userModel, 'findOne').mockResolvedValue(null)
