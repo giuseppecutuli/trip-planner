@@ -14,7 +14,7 @@ export class SearchTripDto {
   @ExistOnMongo({ model: 'Airport', column: 'iata' })
   destination: string
 
-  @ApiProperty()
+  @ApiProperty({ required: false })
   @IsIn(Object.keys(SORT_BY))
   @IsOptional()
   sort_by?: SortBy
